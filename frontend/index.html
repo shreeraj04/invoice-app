@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shreeraj - Invoice Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Shreeraj Bhat</h1>
+
+        <div class="card">
+            <h2>Your Details (Settings)</h2>
+            <form id="settingsForm">
+                <div class="form-grid">
+                    <input type="text" id="yourName" placeholder="Your Name" required>
+                    <input type="email" id="yourEmail" placeholder="Your Email" required>
+                    <input type="text" id="upiId" placeholder="Your UPI ID (e.g., name@okbank)">
+                    <textarea id="yourAddress" placeholder="Your Address" rows="3" required></textarea>
+                </div>
+                <button type="submit">Save Settings</button>
+            </form>
+        </div>
+
+        <div class="card">
+            <h2>Create New Invoice</h2>
+            <form id="invoiceForm">
+                <div class="form-grid">
+                    <input type="text" id="clientName" placeholder="Client Name" required>
+                    <input type="email" id="clientEmail" placeholder="Client Email" required>
+                    <input type="text" id="invoiceNumber" placeholder="Invoice Number (e.g., 00001)" required>
+                    <input type="date" id="invoiceDate" required>
+                    <textarea id="clientAddress" placeholder="Client Address" rows="3" required></textarea>
+                </div>
+
+                <h3>Items</h3>
+                <div id="itemsContainer">
+                    </div>
+                <button type="button" id="addItemBtn">+ Add Item</button>
+                
+                <div class="total-section">
+                    <strong>Total: ₹<span id="totalAmount">0.00</span></strong>
+                </div>
+
+                <textarea id="note" placeholder="Note (e.g., Thank you for your business!)" rows="3"></textarea>
+
+                <div class="action-buttons">
+                    <button type="button" id="previewBtn">Preview PDF</button>
+                    <button type="submit" id="sendBtn">Generate & Send Email</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="card">
+            <h2>Past Invoices</h2>
+            <table id="invoicesTable">
+                <thead>
+                    <tr>
+                        <th>Invoice #</th>
+                        <th>Client Name</th>
+                        <th>Date</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
